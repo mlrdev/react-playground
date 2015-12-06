@@ -1,4 +1,4 @@
-React playground
+# React playground
 
 ## Structure
 
