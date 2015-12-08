@@ -1,9 +1,12 @@
 {
   "name": "application-name",
   "version": "0.0.1",
-  "author": "Martin Rothe",
   "description": "React playground UI.",
-
+  "scripts": {
+    "clean" : "rm -rf dist",
+    "package" : "npm run transpile && cp -f *.html dist",
+    "transpile" : "tsc *.ts --sourceMap --outDir dist/ --module amd"
+  },
   "dependencies": {
     "react": "^0.14.3",
     "react-dom": "^0.14.3"
