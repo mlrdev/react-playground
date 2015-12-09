@@ -3,27 +3,10 @@
 <head lang="en">
     <meta charset="UTF-8"/>
     <title>React test</title>
+    <script src="GemFetcher.js" type=application/javascript></script>
 </head>
 <body>
-
-<div id="gems">Gems available...</div>
-<button type="button" onclick="loadGems()">Load gems</button>
-
-<script>
-    function loadGems() {
-        console.log("loadGems()")
-        var xhr = new XMLHttpRequest()
-        xhr.open("GET", "http://localhost:8080/gems", false, "user", "password")
-
-        try {
-            xhr.send();
-            if (xhr.status === 200) {
-                document.getElementById("gems").innerHTML = JSON.parse(xhr.responseText)
-            }
-        } catch (e) {
-            console.log("Error: ", e)
-        }
-    }
-</script>
+    <h2>Gems available</h2>
+    <div id="gems"></div>
 </body>
 </html>
