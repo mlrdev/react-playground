@@ -4,8 +4,8 @@
   "description": "React playground UI.",
   "scripts": {
     "clean" : "rm -rf dist",
-    "package" : "npm run transpile && cp -f *.html dist",
-    "transpile" : "tsc *.ts --sourceMap --outDir dist/ --module amd"
+    "package" : "npm run clean && npm run transpile && cp -f *.html dist && cp -fr typings dist",
+    "transpile" : "tsc -module commonjs -sourceMap *.ts -outDir dist/"
   },
   "dependencies": {
     "react": "^0.14.3",
