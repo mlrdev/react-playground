@@ -4,8 +4,10 @@
   "description": "React playground UI.",
   "scripts": {
     "clean" : "rm -rf dist",
+    "typeDefinitions" : "tsd install express http-status node --verbose",
     "package" : "npm run clean && npm run transpile && cp -f *.html dist && cp -fr typings dist",
-    "transpile" : "tsc"
+    "transpile" : "tsc",
+    "preinstall" : "npm run typeDefinitions"
   },
   "dependencies": {
     "react": "^0.14.3",
