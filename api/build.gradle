@@ -35,6 +35,9 @@ dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-zuul')
     compile('org.springframework.boot:spring-boot-starter-jdbc')
     compile('org.springframework.boot:spring-boot-starter-security')
+
+    compile("io.dropwizard.metrics:metrics-core:3.1.2")
+
     runtime('com.h2database:h2')
     runtime('org.postgresql:postgresql:9.4-1201-jdbc41')
     testCompile('org.springframework.boot:spring-boot-starter-test') 
