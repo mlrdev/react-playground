@@ -17,21 +17,27 @@ import java.util.List;
  */
 @RestController
 @RequestMapping(value = "gems")
-public class GemsController {
+public class GemsController implements Controller<Gem> {
 
     private static final Logger LOG = LoggerFactory.getLogger(GemsController.class);
 
     @Autowired
     private GemsService gemsService;
 
+    @Override
     @RequestMapping(method = RequestMethod.GET)
-
     public List<Gem> getAll() {
         return gemsService.getAll();
     }
 
+    @Override
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     public Gem getById(@PathVariable String id) {
-        return gemsService.getById(Integer.parseInt(id));
+        try {
+            return gemsService.getById(Integer.parseInt(id));
+        } catch (NumberFormatException ex) {
+            LOG.error("NumberFormatException while getById");
+        }
+        return null;
     }
 }

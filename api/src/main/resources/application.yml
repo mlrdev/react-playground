@@ -2,3 +2,6 @@ security:
   user:
     name: user
     password: password
+
+blog:
+  path: /home/user/website-files
