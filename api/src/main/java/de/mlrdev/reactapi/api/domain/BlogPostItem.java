@@ -1,7 +1,5 @@
 package de.mlrdev.reactapi.api.domain;
 
-import java.util.Date;
-
 /**
  * Represents a block post item.
  */

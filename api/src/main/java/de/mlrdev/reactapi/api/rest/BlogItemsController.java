@@ -1,20 +1,19 @@
 package de.mlrdev.reactapi.api.rest;
 
+import de.mlrdev.reactapi.api.bizz.ItemService;
 import de.mlrdev.reactapi.api.domain.BlogPostItem;
-import de.mlrdev.reactapi.api.service.ItemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-@RestController
+@org.springframework.web.bind.annotation.RestController
 @RequestMapping(value = "blogitems")
-public class BlogItemsController implements Controller<BlogPostItemRest> {
+public class BlogItemsController implements RestController<BlogPostItemRest> {
 
     private static final Logger LOG = LoggerFactory.getLogger(BlogItemsController.class);
 

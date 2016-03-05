@@ -1,4 +1,4 @@
-package de.mlrdev.reactapi.api.service;
+package de.mlrdev.reactapi.api.repo;
 
 import de.mlrdev.reactapi.api.domain.BlogPostItem;
 import org.slf4j.Logger;
@@ -15,16 +15,16 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Item service that is based on files.
+ * Item repository service that is based on files.
  * Each file represents a new item/entry.
  */
 @Service
-public class FileItemService implements ItemService<BlogPostItem> {
+public class FileItemRepository implements ItemRepository<BlogPostItem> {
 
     @Value("${blog.path}")
     private String path;
 
-    private static final Logger LOG = LoggerFactory.getLogger(FileItemService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FileItemRepository.class);
 
     private static final String NEWLINE = System.getProperty("line.separator");
 
@@ -66,6 +66,6 @@ public class FileItemService implements ItemService<BlogPostItem> {
 
     @Override
     public BlogPostItem getById(String id) {
-        return null;
+        throw new UnsupportedOperationException("not yet implemented");
     }
 }

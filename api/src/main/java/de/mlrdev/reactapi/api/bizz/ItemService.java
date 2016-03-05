@@ -1,8 +1,9 @@
-package de.mlrdev.reactapi.api.rest;
+package de.mlrdev.reactapi.api.bizz;
 
 import java.util.List;
 
-public interface Controller<T> {
+public interface ItemService<T> {
     List<T> getAll();
+
     T getById(String id);
 }
